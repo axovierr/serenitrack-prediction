@@ -6,9 +6,9 @@
 **SereniTrack** adalah sebuah platform berbasis web yang digunakan untuk membantu mendeteksi risiko depresi pada mahasiswa berdasarkan pola hidup, tekanan akademis, dan faktor-faktor lainnya. Aplikasi ini berjalan dalam environment Python menggunakan web-framework **Flask** dan memanfaatkan dataset serta model *Machine Learning* (`RandomForestClassifier`) yang sudah dilatih (pretrained).
 
 Website ini dibangun oleh mahasiswa **Teknik Informatika 2023 · Rombel 1 · Kelompok 7**:
-1. Josephin Nova Bagaskara (2304130002)
-2. Luthfa Qubailatun Najwah (2304130015)
-3. Nur Khevin (2304130032)
+1. Josephin Nova Bagaskara
+2. Luthfa Qubailatun Najwah
+3. Nur Khevin
 
 ---
 
