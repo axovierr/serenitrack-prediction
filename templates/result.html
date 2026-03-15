@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Prediksi</title>
+    <title>Hasil Prediksi — SereniTrack</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    
+    <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="static/result.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Hasil Prediksi</h1>
-        <p class="result"><strong>{{ result }}</strong></p>
-        <p class="massage"><strong>{{message}}</strong></p>
-        <div class="saran">
-            {% if saran %}
-             <ul>
-                    {% for s in saran %}
-                    <li>{{ s }}</li>
-                    {% endfor %}
-             </ul>
-            {% endif %}
-            </div>
-        <a href="/">Kembali</a>
+    <!-- Background Elements -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    
+    <div class="container fade-in">
+        <!-- Result Icon dynamically based on result -->
+        {% if result == "Depressed" %}
+        <div class="result-icon pulse-warning">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        {% else %}
+        <div class="result-icon pulse-success">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        {% endif %}
+
+        <h1>Hasil Analisis Anda</h1>
+        
+        <div class="result-box {% if result == 'Depressed' %}warning{% else %}success{% endif %}">
+            <p class="result-title">Indikasi Kondisi Mental:</p>
+            <p class="result-text">{{ result }}</p>
+        </div>
+        
+        <div class="message-box">
+            <p class="message"><i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i> <strong>{{ message }}</strong></p>
+        </div>
+
+        {% if saran %}
+        <div class="saran-section">
+            <h3><i class="fa-solid fa-lightbulb" style="color: #f59e0b; margin-right: 8px;"></i> Rekomendasi Langkah Selanjutnya</h3>
+            <ul>
+                {% for s in saran %}
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    <span>{{ s }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        <div class="actions">
+            <a href="/" class="btn-back"><i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Kembali ke Beranda</a>
+        </div>
+        
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> Hasil ini merupakan prediksi berbasis data dan <strong>bukan diagnosis medis</strong>. Selalu konsultasikan dengan profesional kesehatan mental jika Anda merasa membutuhkan bantuan.</p>
+        </div>
     </div>
 </body>
+
 </html>

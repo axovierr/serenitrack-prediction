@@ -4,16 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SereniTrack — Deteksi dini risiko depresi mahasiswa dengan teknologi machine learning. Cepat, akurat, dan terpercaya.">
     <link rel="icon" type="image/jpg" href="static/logowebsite.jpg" />
-    <title>SereniTrack</title>
+    <title>SereniTrack — Mental Health Tracker</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="static/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
+    <!-- HEADER -->
     <header class="header">
         <a href="#home" class="logo"><span>Sereni</span>Track</a>
 
@@ -22,20 +27,53 @@
             <a href="#about">About</a>
             <a href="#team">Our Team</a>
         </nav>
-        
-        <a href="#form" class="test">Try Now!</a>
 
+        <a href="#form" class="test">Try Now</a>
     </header>
 
+    <!-- HEALTH TIPS STRIP -->
+    <div class="health-strip">
+        <div class="health-strip-inner">
+            <span><i class="fa-solid fa-heart" style="margin-right: 8px;"></i> Mental health matters — Check your wellbeing today</span>
+            <span><i class="fa-solid fa-leaf" style="margin-right: 8px;"></i> Healthy sleep = healthy mind. Aim 7–8 hours a night</span>
+            <span><i class="fa-solid fa-om" style="margin-right: 8px;"></i> Mindfulness helps reduce stress and anxiety</span>
+            <span><i class="fa-solid fa-dumbbell" style="margin-right: 8px;"></i> Regular exercise boosts serotonin and reduces depression</span>
+            <span><i class="fa-solid fa-handshake-angle" style="margin-right: 8px;"></i> Talking to someone you trust can make a huge difference</span>
+            <span><i class="fa-solid fa-apple-whole" style="margin-right: 8px;"></i> Good nutrition fuels both body and brain</span>
+            <!-- Duplicate for seamless loop -->
+            <span><i class="fa-solid fa-heart" style="margin-right: 8px;"></i> Mental health matters — Check your wellbeing today</span>
+            <span><i class="fa-solid fa-leaf" style="margin-right: 8px;"></i> Healthy sleep = healthy mind. Aim 7–8 hours a night</span>
+            <span><i class="fa-solid fa-om" style="margin-right: 8px;"></i> Mindfulness helps reduce stress and anxiety</span>
+            <span><i class="fa-solid fa-dumbbell" style="margin-right: 8px;"></i> Regular exercise boosts serotonin and reduces depression</span>
+            <span><i class="fa-solid fa-handshake-angle" style="margin-right: 8px;"></i> Talking to someone you trust can make a huge difference</span>
+            <span><i class="fa-solid fa-apple-whole" style="margin-right: 8px;"></i> Good nutrition fuels both body and brain</span>
+        </div>
+    </div>
+
+    <!-- HOME SECTION -->
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Hi, Welcome to</h3>
+            <h3>Mental Health Platform</h3>
             <h1><span>Sereni</span>Track</h1>
-            <br>
-            <h4>Are you feel <span class="input"></span></h4>
+            <h4>Are you feeling <span class="input"></span></h4>
             <p>
-                Don't worry, My Friend! I'm here for you, let's check your condition first, Okay?
+                Don't worry, we're here for you <i class="fa-solid fa-heart" style="color: var(--primary);"></i> Let us help you understand your mental health condition through a quick, science-based assessment.
             </p>
+
+            <div class="home-stats">
+                <div class="stat-item">
+                    <div class="stat-num">98%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">3min</div>
+                    <div class="stat-label">Quick Test</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">Free</div>
+                    <div class="stat-label">Always Free</div>
+                </div>
+            </div>
 
             <div class="button-home">
                 <a href="#form" class="btnhome2">Check Now!</a>
@@ -43,202 +81,224 @@
         </div>
 
         <div class="img-box">
-            <img src="static/image2.gif" alt="">
+            <img src="static/image2.png" alt="Mental Health Illustration">
         </div>
     </section>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script type="text/javascript">
-        var Typed = new Typed(".input ", {
-            strings: ["anxious?", "tired?", "loss?", "down?", "confused?"], typeSpeed: 75, backSpeed: 50, loop: true
+        var Typed = new Typed(".input", {
+            strings: ["anxious?", "tired?", "lost?", "down?", "overwhelmed?", "confused?"],
+            typeSpeed: 75, backSpeed: 50, loop: true
         });
     </script>
-    </div>
 
+    <!-- ABOUT SECTION -->
     <section class="about" id="about">
-
-        <h2 class="titleabout">
-            What is <span>Sereni</span>Track?
-        </h2>
+        <div class="section-header">
+            <div class="section-badge">About Us</div>
+            <h2 class="titleabout">What is <span>Sereni</span>Track?</h2>
+            <p class="about-subtitle">A smart tool designed to help students better understand their mental wellbeing</p>
+        </div>
 
         <div class="about-container">
-            <div class="aboutbox">
+            <!-- Card 1 -->
+            <div class="aboutbox reveal">
                 <div class="aboutinfo">
-                    <h4>
-                        What is it?
-                    </h4>
+                    <div class="about-icon"><i class="fa-solid fa-microscope"></i></div>
+                    <h4>What is it?</h4>
                     <p>
-                        Serenitrack is a website that can help students detect depression simply and accurately.
+                        SereniTrack is a web platform that helps students detect depression symptoms simply and accurately through a data-driven questionnaire.
                     </p>
                 </div>
             </div>
 
-            <div class="aboutbox">
+            <!-- Card 2 -->
+            <div class="aboutbox reveal">
                 <div class="aboutinfo">
-                    <h4>
-                        Why SereniTrack?
-                    </h4>
+                    <div class="about-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h4>Why SereniTrack?</h4>
                     <p>
-                        Serenitrack helps increase self-awareness and provides a first step in maintaining students'
-                        mental health.
+                        We help increase self-awareness and provide a meaningful first step toward maintaining students' mental health and overall wellbeing.
                     </p>
                 </div>
             </div>
 
-            <div class="aboutbox">
+            <!-- Card 3 -->
+            <div class="aboutbox reveal">
                 <div class="aboutinfo">
-                    <h4>
-                        How does it work?
-                    </h4>
+                    <div class="about-icon"><i class="fa-solid fa-gear"></i></div>
+                    <h4>How does it work?</h4>
                     <p>
-                        It is processes personal data from users to provide depression predictions based on stored
-                        datasets.
+                        It processes personal data from users to provide depression predictions based on trained machine learning datasets from real student data.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- FORM SECTION -->
     <section class="form" id="form">
-        <h2 class="titleform">
-            Check Your Condition with <span>Sereni</span>Track
-        </h2>
+        <div class="section-header">
+            <div class="section-badge">Assessment Tool</div>
+            <h2 class="titleform">Check Your Condition with <span>Sereni</span>Track</h2>
+            <p class="form-subtitle">Answer honestly for the most accurate result. All responses are confidential.</p>
+        </div>
 
         <div class="form-container">
             <form action="/predict" method="post" autocomplete="off">
+
                 <!-- Gender -->
-                <label for="gender">Gender</label><br>
-                <select id="gender" name="gender" required>
-                    <option value="" disabled selected>Select Option ...</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select><br><br>
+                <div class="form-group">
+                    <label for="gender"><span class="field-icon"><i class="fa-solid fa-user"></i></span> Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select your gender…</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
 
                 <!-- Age -->
-                <label for="age" min="1" max="100">Age</label><br>
-                <select id="age" name="age" required>
-                    <option value="" disabled selected>Select Option ...</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                </select><br><br>
+                <div class="form-group">
+                    <label for="age"><span class="field-icon"><i class="fa-solid fa-cake-candles"></i></span> Age</label>
+                    <select id="age" name="age" required>
+                        <option value="" disabled selected>Select your age…</option>
+                        <option value="18">18 years old</option>
+                        <option value="19">19 years old</option>
+                        <option value="20">20 years old</option>
+                        <option value="21">21 years old</option>
+                        <option value="22">22 years old</option>
+                        <option value="23">23 years old</option>
+                        <option value="24">24 years old</option>
+                        <option value="25">25 years old</option>
+                    </select>
+                </div>
 
                 <!-- Academic Pressure -->
-                <label for="academic_pressure">Academic Pressure</label><br>
-                <select id="academic_pressure" name="academic_pressure" required>
-                    <option value="" disabled selected>Select Option ...</option>
-                    <option value="1">Overwhelmed</option>
-                    <option value="2">Stresed</option>
-                    <option value="3">Neutral</option>
-                    <option value="4">Midly Stressed</option>
-                    <option value="5">Relaxed</option>
-                </select><br><br>
-
+                <div class="form-group">
+                    <label for="academic_pressure"><span class="field-icon"><i class="fa-solid fa-book-open"></i></span> Academic Pressure</label>
+                    <select id="academic_pressure" name="academic_pressure" required>
+                        <option value="" disabled selected>How do you feel about academics?</option>
+                        <option value="1">Overwhelmed — Can barely keep up</option>
+                        <option value="2">Stressed — Feeling significant pressure</option>
+                        <option value="3">Neutral — Manageable</option>
+                        <option value="4">Mildly Stressed — Slightly challenging</option>
+                        <option value="5">Relaxed — No significant pressure</option>
+                    </select>
+                </div>
 
                 <!-- Study Satisfaction -->
-                <label for="study_satisfaction">Study Satisfaction</label><br>
-                <select id="study_satisfaction" name="study_satisfaction" required>
-                    <option value="" disabled selected>Select Option ...</option>
-                    <option value="1">Very Uncomfortable</option>
-                    <option value="2">Uncomfortable</option>
-                    <option value="3">Neutral</option>
-                    <option value="4">Comfortable</option>
-                    <option value="5">Very Comfortable</option>
-                </select><br><br>
+                <div class="form-group">
+                    <label for="study_satisfaction"><span class="field-icon"><i class="fa-solid fa-face-smile"></i></span> Study Satisfaction</label>
+                    <select id="study_satisfaction" name="study_satisfaction" required>
+                        <option value="" disabled selected>How satisfied are you with your studies?</option>
+                        <option value="1">Very Uncomfortable — Very dissatisfied</option>
+                        <option value="2">Uncomfortable — Dissatisfied</option>
+                        <option value="3">Neutral — Indifferent</option>
+                        <option value="4">Comfortable — Satisfied</option>
+                        <option value="5">Very Comfortable — Very satisfied</option>
+                    </select>
+                </div>
 
                 <!-- Sleep Duration -->
-                <label for="sleep_duration">Sleep Duration</label><br>
-                <select id="sleep_duration" name="sleep_duration" required>
-                    <option value="" disabled selected>Select Option ...</option>
-                    <option value="Less than 5 hours">Less than 5 hours</option>
-                    <option value="5 - 6 hours">5 - 6 hours</option>
-                    <option value="6 - 7 hours">6 - 7 hours</option>
-                    <option value="7 - 8 hours">7 - 8 hours</option>
-                    <option value="More than 8 hours">More than 8 hours</option>
-                </select><br><br>
+                <div class="form-group">
+                    <label for="sleep_duration"><span class="field-icon"><i class="fa-solid fa-moon"></i></span> Sleep Duration (per night)</label>
+                    <select id="sleep_duration" name="sleep_duration" required>
+                        <option value="" disabled selected>How many hours do you sleep?</option>
+                        <option value="Less than 5 hours">Less than 5 hours — Very little sleep</option>
+                        <option value="5 - 6 hours">5–6 hours — Below average</option>
+                        <option value="6 - 7 hours">6–7 hours — Slightly below ideal</option>
+                        <option value="7 - 8 hours">7–8 hours — Recommended</option>
+                        <option value="More than 8 hours">More than 8 hours — Oversleeping</option>
+                    </select>
+                </div>
 
                 <!-- Dietary Habits -->
-                <label for="dietary_habits">Dietary Habits</label><br>
-                <select id="dietary_habits" name="dietary_habits" required>
-                    <option value="" disabled selected>Select Option ...</option>
-                    <option value="Unhealthy">Unhealthy</option>
-                    <option value="Moderate">Moderate</option>
-                    <option value="Healthy">Healthy</option>
-                </select><br><br>
+                <div class="form-group">
+                    <label for="dietary_habits"><span class="field-icon"><i class="fa-solid fa-utensils"></i></span> Dietary Habits</label>
+                    <select id="dietary_habits" name="dietary_habits" required>
+                        <option value="" disabled selected>How would you describe your diet?</option>
+                        <option value="Unhealthy">Unhealthy — Mostly junk/processed foods</option>
+                        <option value="Moderate">Moderate — Mix of healthy & unhealthy</option>
+                        <option value="Healthy">Healthy — Balanced, nutritious meals</option>
+                    </select>
+                </div>
 
                 <!-- Suicidal Thoughts -->
-                <label for="suicidal_thoughts">Have you ever had suicidal thoughts?</label><br>
-                <select id="suicidal_thoughts" name="suicidal_thoughts" required>
-                    <option value="" disabled selected>Select Option ...</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select><br><br>
+                <div class="form-group">
+                    <label for="suicidal_thoughts"><span class="field-icon"><i class="fa-solid fa-comment-dots"></i></span> Suicidal Thoughts</label>
+                    <select id="suicidal_thoughts" name="suicidal_thoughts" required>
+                        <option value="" disabled selected>Have you had suicidal thoughts?</option>
+                        <option value="Yes">Yes — I have had such thoughts</option>
+                        <option value="No">No — I have not had such thoughts</option>
+                    </select>
+                </div>
 
                 <!-- Study Hours -->
-                <label for="study_hours" min="1" max="24">Study Hours</label><br>
-                <select id="study_hours" name="study_hours" required>
-                    <option value="" disabled selected>Select Option ...</option>
-                    <option value="1">1 hour</option>
-                    <option value="2">2 hours</option>
-                    <option value="3">3 hours</option>
-                    <option value="4">4 hours</option>
-                    <option value="5">5 hours</option>
-                    <option value="6">6 hours</option>
-                    <option value="7">7 hours</option>
-                    <option value="8">8 hours</option>
-                </select><br><br>
+                <div class="form-group">
+                    <label for="study_hours"><span class="field-icon"><i class="fa-solid fa-clock"></i></span> Study Hours (per day)</label>
+                    <select id="study_hours" name="study_hours" required>
+                        <option value="" disabled selected>How many hours do you study daily?</option>
+                        <option value="1">1 hour</option>
+                        <option value="2">2 hours</option>
+                        <option value="3">3 hours</option>
+                        <option value="4">4 hours</option>
+                        <option value="5">5 hours</option>
+                        <option value="6">6 hours</option>
+                        <option value="7">7 hours</option>
+                        <option value="8">8 hours or more</option>
+                    </select>
+                </div>
 
                 <!-- Financial Stress -->
-                <label for="financial_stress" min="1" max="5">Financial Stress</label><br>
-                <select id="financial_stress" name="financial_stress" required>
-                    <option value="" disabled selected>Select Option ...</option>
-                    <option value="1">Very Low</option>
-                    <option value="2">Low</option>
-                    <option value="3">Neutral</option>
-                    <option value="4">High</option>
-                    <option value="5">Very High</option>
-                </select><br><br>
+                <div class="form-group">
+                    <label for="financial_stress"><span class="field-icon"><i class="fa-solid fa-wallet"></i></span> Financial Stress</label>
+                    <select id="financial_stress" name="financial_stress" required>
+                        <option value="" disabled selected>How stressed are you about finances?</option>
+                        <option value="1">Very Low — No financial worries</option>
+                        <option value="2">Low — Minor financial concerns</option>
+                        <option value="3">Neutral — Moderate financial situation</option>
+                        <option value="4">High — Significant financial stress</option>
+                        <option value="5">Very High — Severe financial difficulties</option>
+                    </select>
+                </div>
 
-                <!-- Family History of Mental Illness -->
-                <label for="family_history">Family History of Mental Illness</label><br>
-                <select id="family_history" name="family_history" required>
-                    <option value="" disabled selected>Select Option ...</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select><br><br>
+                <!-- Family History -->
+                <div class="form-group">
+                    <label for="family_history"><span class="field-icon"><i class="fa-solid fa-hospital"></i></span> Family History of Mental Illness</label>
+                    <select id="family_history" name="family_history" required>
+                        <option value="" disabled selected>Any family history of mental illness?</option>
+                        <option value="Yes">Yes — Family member(s) with mental illness</option>
+                        <option value="No">No — No family history</option>
+                    </select>
+                </div>
 
-                <!-- Submit Button -->
-                <button type="submit" id="submitbutton">Submit</button>
+                <!-- Submit -->
+                <button type="submit" id="submitbutton">Analyze My Mental Health</button>
             </form>
         </div>
     </section>
 
+    <!-- TEAM SECTION -->
     <section class="team" id="team">
         <div class="teamtitle">
-            <h3>
-                Our Team
-            </h3>
+            <div class="section-badge">The Creators</div>
+            <h3>Meet Our <span>Team</span></h3>
+            <p class="team-subtitle">The dedicated students behind SereniTrack</p>
         </div>
+
         <div class="teamrow">
             <!-- Member 1 -->
-            <div class="teamcolumn">
+            <div class="teamcolumn reveal">
                 <div class="teamcard">
                     <div class="img-container">
-                        <img src="static/foto1.png">
+                        <img src="static/foto1.png" alt="Josephin Nova Bagaskara">
                     </div>
-                    <h4>
-                        Josephin Nova Bagaskara
-                    </h4>
-                    <p>
-                        2304130002
-                    </p>
+                    <h4>Josephin Nova Bagaskara</h4>
+                    <p>2304130002</p>
                     <div class="groupicons">
                         <div class="iconswhatsapp">
-                            <a href="https://wa.me/6282247917650">
+                            <a href="https://wa.me/6282247917650" target="_blank">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
                         </div>
@@ -248,29 +308,25 @@
                             </a>
                         </div>
                         <div class="iconslinkedin">
-                            <a href="https://www.linkedin.com/in/josephin-nova-bagaskara-3200a0340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                                target="_blank">
+                            <a href="https://www.linkedin.com/in/josephin-nova-bagaskara-3200a0340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>`
+            </div>
+
             <!-- Member 2 -->
-            <div class="teamcolumn">
+            <div class="teamcolumn reveal">
                 <div class="teamcard">
                     <div class="img-container">
-                        <img src="static/foto2.png">
+                        <img src="static/foto2.png" alt="Luthfa Qubailatun Najwah">
                     </div>
-                    <h4>
-                        Luthfa Qubailatun Najwah
-                    </h4>
-                    <p>
-                        2304130015
-                    </p>
+                    <h4>Luthfa Qubailatun Najwah</h4>
+                    <p>2304130015</p>
                     <div class="groupicons">
                         <div class="iconswhatsapp">
-                            <a href="https://wa.me/6285945973199">
+                            <a href="https://wa.me/6285945973199" target="_blank">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
                         </div>
@@ -286,22 +342,19 @@
                         </div>
                     </div>
                 </div>
-            </div>`
+            </div>
+
             <!-- Member 3 -->
-            <div class="teamcolumn">
+            <div class="teamcolumn reveal">
                 <div class="teamcard">
                     <div class="img-container">
-                        <img src="static/foto3.png">
+                        <img src="static/foto3.png" alt="Nur Khevin">
                     </div>
-                    <h4>
-                        Nur Khevin
-                    </h4>
-                    <p>
-                        2304130032
-                    </p>
+                    <h4>Nur Khevin</h4>
+                    <p>2304130032</p>
                     <div class="groupicons">
                         <div class="iconswhatsapp">
-                            <a href="https://wa.me/6281228824127">
+                            <a href="https://wa.me/6281228824127" target="_blank">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
                         </div>
@@ -317,19 +370,62 @@
                         </div>
                     </div>
                 </div>
-            </div>`
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
         <div class="footercontainer">
             <div class="footerbottom">
-                <p>Copyright &copy;2024; Designed by <span class="designer">Teknik Informatika 2023 Rombel 1 Kelompok
-                        7</span></p>
+                <p>Copyright &copy; 2024 — Designed with <i class="fa-solid fa-heart" style="color: var(--primary);"></i> by <span class="designer">Teknik Informatika 2023 · Rombel 1 · Kelompok 7</span></p>
             </div>
         </div>
     </footer>
+
+    <!-- SCROLL REVEAL SCRIPT -->
+    <script>
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, i * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealEls.forEach(el => observer.observe(el));
+
+        // Navbar active state on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navbar a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = 'var(--primary)';
+                    link.style.background = 'var(--primary-light)';
+                } else {
+                    link.style.background = '';
+                }
+            });
+
+            // Header scroll shadow
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 30px rgba(14,165,233,0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(14,165,233,0.08)';
+            }
+        });
+    </script>
 </body>
 
 </html>

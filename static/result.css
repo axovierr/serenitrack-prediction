@@ -1,86 +1,314 @@
-body {
-    font-family: 'Poppins', sans-serif;
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ===== Variables ===== */
+:root {
+    --primary: #0ea5e9;
+    --primary-light: #e0f2fe;
+    --success: #10b981;
+    --success-light: #ecfdf5;
+    --warning: #f59e0b;
+    --danger: #f43f5e;
+    --danger-light: #fff1f2;
+    --text-dark: #0f172a;
+    --text-medium: #475569;
+    --text-light: #94a3b8;
+    --bg-main: #f0f9ff;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Base & Reset ===== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-image: url("dunia-medis-1.jpg");
-    background-size: cover;
-    background-position: center;
+    min-height: 100vh;
+    padding: 40px 20px;
     position: relative;
-    background-color: rgba(255, 135, 135, 0.8);
+    overflow-x: hidden;
 }
 
-.overlay {
+/* ===== Animated Background Shapes ===== */
+.bg-shape {
     position: absolute;
-    top: 0;
-    left: 0;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    animation: drift 10s infinite alternate ease-in-out;
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(14, 165, 233, 0.15); /* Primary blue */
+    top: -100px;
+    left: -100px;
+}
+
+.shape-2 {
+    width: 600px;
+    height: 600px;
+    background: rgba(16, 185, 129, 0.1); /* Success green */
+    bottom: -150px;
+    right: -150px;
+    animation-delay: -5s;
+}
+
+@keyframes drift {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-30px) scale(1.05); }
+}
+
+/* ===== Main Container (Glassmorphism) ===== */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
     width: 100%;
-    height: 100%;
-    z-index: 1;
+    max-width: 650px;
+    padding: 50px 48px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
+.fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Header Icon ===== */
+.result-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.pulse-warning {
+    background: linear-gradient(135deg, #f43f5e, #e11d48);
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.4);
+    animation: pulseWarning 2s infinite;
+}
+
+.pulse-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    animation: pulseSuccess 2s infinite;
+}
+
+@keyframes pulseWarning {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(244, 63, 94, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
+}
+
+@keyframes pulseSuccess {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* ===== Typography ===== */
 h1 {
-    color: #333;
-    margin-bottom: -5px;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
 }
 
-.result{
-    font-size: 34px;
-    margin-bottom: 0px;
-    color: rgb(206, 51, 77);
+/* ===== Result Box ===== */
+.result-box {
+    padding: 20px;
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+    border: 2px solid transparent;
 }
 
+.result-box.warning {
+    background-color: var(--danger-light);
+    border-color: rgba(244, 63, 94, 0.2);
+}
+
+.result-box.success {
+    background-color: var(--success-light);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.result-title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-medium);
+    margin-bottom: 8px;
+}
+
+.result-text {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.result-box.warning .result-text {
+    color: var(--danger);
+}
+
+.result-box.success .result-text {
+    color: var(--success);
+}
+
+/* ===== Message Section ===== */
+.message-box {
+    background: var(--bg-main);
+    padding: 18px 24px;
+    border-radius: var(--radius-md);
+    margin-bottom: 32px;
+    border-left: 4px solid var(--primary);
+    text-align: left;
+}
 
 .message {
-    margin-bottom: 5px;
-    position: absolute;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-medium);
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2px;
+.message strong {
+    color: var(--text-dark);
+    font-weight: 600;
 }
 
-li {
-    font-size: 16px;
-    margin-bottom: 5px;
+/* ===== Saran (Recommendations) Section ===== */
+.saran-section {
+    text-align: left;
+    margin-bottom: 40px;
+    background: #f8fafc;
+    padding: 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
 }
 
-.saran {
+.saran-section h3 {
     font-size: 18px;
-    margin-bottom: 5px;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
 }
 
-a {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: rgb(255   , 135, 155);
+.saran-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.saran-section li {
+    font-size: 15px;
+    color: var(--text-medium);
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.saran-section li i {
+    color: var(--primary);
+    margin-top: 4px;
+    font-size: 14px;
+    background: var(--primary-light);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ===== Back Button ===== */
+.actions {
+    margin-bottom: 32px;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: var(--text-dark);
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s ease;
+    border-radius: 99px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    max-width: 300px;
 }
 
-a:hover {
-    background-color: rgb(206, 51, 77);
+.btn-back:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
-.container {
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 700px; /* Panjang container */
-    max-width: 100%; /* Maksimum lebar container */
-    height: 400px;
-    align-items: center;
-    text-align: center;
-    display: grid;
+/* ===== Disclaimer ===== */
+.disclaimer {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.5;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .container {
+        padding: 40px 24px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .result-text {
+        font-size: 26px;
+    }
+    
+    .saran-section {
+        padding: 20px;
+    }
 }
